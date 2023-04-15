@@ -75,6 +75,8 @@ router.get('/otp/report', async (req, res) => {
 
   //const data = await OtpModel.aggregate().sortByCount("branch_type");
   const lstOtp = await OtpModel.find(filter);
+  console.log("API");
+  console.log(lstOtp.length);
 
   const count_google = lstOtp.filter(x => x.branch_type == 'Google');
   const count_facebook = lstOtp.filter(x => x.branch_type == 'Facebook');
